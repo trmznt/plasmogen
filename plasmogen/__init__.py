@@ -2,9 +2,9 @@ from pyramid.config import Configurator
 from rhombus.lib.utils import cerr, cout, set_dbhandler_class
 from rhombus import add_route_view
 
-from plasmogen.models.handler import DBHandler
-
-set_dbhandler_class( DBHandler )
+#from plasmogen.models.handler import DBHandler
+import plasmogen.scripts.run
+#set_dbhandler_class( DBHandler )
 
 from genaf import includeme as genaf_includeme, init_app
 

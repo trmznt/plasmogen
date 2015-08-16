@@ -18,7 +18,7 @@ def usage():
     cerr('\t%s scriptname [options]' % sys.argv[0])
     sys.exit(0)
 
-print('plasmogen run.py')
+
 set_config( environ='PLASMOGEN_CONFIG',
             paths = ['plasmogen.scripts.'],
             greet = greet,
