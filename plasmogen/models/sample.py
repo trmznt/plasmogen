@@ -133,6 +133,15 @@ class PlasmogenSample(Sample):
                                     dbsession = object_session(self), auto=True)
             self.pcr = obj.get('pcr')
             self.microscopy = obj.get('microscopy')
+            self.type = obj.get('type')
+            self.day = obj.get('day')
+            if self.day == 0 and self.type == '':
+                self.type = 'P'
+
+            self.passive_case_detection = obj.get('case_detection').lower().startswith('y')
+            self.symptomatic_status = obj.get('symptomatic_status').lower().startswith('y')
+
+            self.parasitemia = int(obj.get('parasite_density', 0))
 
             # deals with subject
             subject_code = obj.get('subject_code', None)
@@ -146,7 +155,9 @@ class PlasmogenSample(Sample):
                 self.subject_id = subject.id
             elif related_sample:
                 # find sample
-                sample = Sample.search( code = related_sample, batch_id = self.batch_id )
+                sample = self.batch.search_sample(related_sample)
+                if sample is None:
+                    raise RuntimeError('ERROR for sample code %s: related sample code %s does not exist' % (self.code, related_sample))
                 self.subject_id = sample.subject_id
             else:
                 # create new subject

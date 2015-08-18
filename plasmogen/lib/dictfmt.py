@@ -5,8 +5,8 @@ from io import StringIO
 csv_headers = dictfmt.csv_headers.union({ 'PASSIVE_DETECTION', 'AGE', 'GENDER',
                 'BLOOD_WITHDRAWAL', 'BLOOD_STORAGE',
                 'MICROSCOPY_IDENTITY', 'PCR_IDENTITY', 'PCR_METHOD',
-                'RECURRENT', 'RECURRENT_SAMPLE', 'PARASITE_DENSITY',
-                'SYMPTOMATIC_STATUS', 'SUBJECT_CODE', 'RELATED_SAMPLE'})
+                'PARASITE_DENSITY', 'SYMPTOMATIC_STATUS',
+                'DAY', 'RECURRENT', 'SUBJECT_CODE', 'RELATED_SAMPLE'})
 
 
 
@@ -31,12 +31,13 @@ def update_sample( sample, r ):
             microscopy = r.get('MICROSCOPY_IDENTITY', '').strip(),
             pcr = r.get('PCR_IDENTITY', '').strip(),
             pcr_method = r.get('PCR_METHOD', '').strip(),
-            recurrent = r.get('RECURRENT', 'N').strip(),
-            recurrent_sample = r.get('RECURRENT_SAMPLE', None),
-            parasite_density = r.get('PARASITE_DENSITY', 0),
+            parasite_density = int(r.get('PARASITE_DENSITY','') or 0),
             symptomatic_status = r.get('SYMPTOMATIC_STATUS', 'N'),
+            day = int(r.get('DAY','') or 0),
+            recurrent = r.get('RECURRENT', 'N').strip(),
             subject_code = r.get('SUBJECT_CODE', None),
             related_sample = r.get('RELATED_SAMPLE', None),
+
         )
     )
 
