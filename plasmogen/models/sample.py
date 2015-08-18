@@ -48,6 +48,12 @@ class Subject(BaseMixIn, Base):
     birthplace = Column(types.String(32))
     idnumber = Column(types.String(32))
 
+    ## custom fields
+
+    int1 = Column(types.Integer, nullable=False, default=0)        # custom usage
+    int2 = Column(types.Integer, nullable=False, default=0)        # custom usage
+    string1 = Column(types.String(16), nullable=False, default='')  # custom usage
+    string2 = Column(types.String(16), nullable=False, default='')  # custom usage
 
     __table_args__ = ( UniqueConstraint( 'code', 'gender', 'yearofbirth' ), {} )
 
@@ -112,8 +118,8 @@ class PlasmogenSample(Sample):
             backref=backref("samples", lazy='dynamic', passive_deletes=True))
     """ link to subject/individual """
 
-    sampling_order = Column(types.Integer, nullable=False, default = 0)
-    """ sampling order for a particular subject/individual """
+    day = Column(types.Integer, nullable=False, default = 0)
+    """ sampling day for a particular subject/individual """
 
     __mapper_args__ = { 'polymorphic_identity': 1 }
 
