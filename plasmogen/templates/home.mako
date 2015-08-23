@@ -1,13 +1,13 @@
 <%inherit file="rhombus:templates/base.mako" />
 
-<h1>${request.get_resource('plasmogen.header', None) or "PlasmoGEN - Plasmodium Genotype platform"}</h1>
+<h1>${request.get_resource('plasmogen.header', "PlasmoGEN - Plasmodium Genotype platform")}</h1>
 
 
 % if request.user:
 
 <p>You are authenticated as: ${request.user.login}  [<a href="/logout">Logout</a>]</p>
 
-<p>What's next?<p>
+<p>Welcome to ${request.get_resource('plasmogen.title', 'Plasmogen')} What's next?<p>
 
 <ul>
   <li><a href="${request.route_url('genaf.batch-edit', id=0)}">Create a new batch</a>

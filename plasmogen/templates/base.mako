@@ -21,15 +21,64 @@
   <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap.min.css')}" rel="stylesheet" />
 <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap-theme.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('rhombus:static/select2/css/select2.min.css')}" rel="stylesheet" />
-  <style>
-    .form-horizontal .form-group {
-        margin-bottom:5px;
-        }
-  </style>
+  <link href="${request.static_url('genaf:static/custom.css')}" rel="stylesheet" />
   ${self.stylelink()}
 
   </head>
   <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">${request.get_resource('plasmogen.title', 'PlasmoGEN')}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/batch">Batch</a></li>
+                <li><a href="/location">Location</a></li>
+                <li><a href="/sample">Sample</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Microsatellite</li>
+                <li><a href="/panel">Panel</a></li>
+                <li><a href="/marker">Marker</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyze <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Basic tools</li>
+                <li><a href="/">Sample summary</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/">Tutorials</a></li>
+              </ul>
+            </li>
+
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./">User: <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
     <div class="container-fluid">
       <div class="row">
       ${flash_msg()}
@@ -47,7 +96,8 @@
     <div class="container-fluid">
       <div class='row'>
       <div class='col-md-12'>
-        <p>This footer is here to check the completeness of the html code for each page!</p>
+        <!-- font: Nobile -->
+        <p>(c) 2015 Menzies School of Health Research &amp; Eijkman Institute for Molecular Biology</p>
       </div>
       </div>
     </div>
