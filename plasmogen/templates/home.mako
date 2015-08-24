@@ -18,8 +18,10 @@
 
 <p>Available tutorial:</p>
 <ul>
-  <li>Uploading your data and FSA files (tutorial-01.zip)</li>
-  <li>...</li>
+  <li>Uploading your data and FSA files (<a href="https://www.dropbox.com/s/75qfjg29gdc0kdj/tutorial_01.zip?dl=0">tutorial-01.zip</a>)</li>
+  <li>Adding individual sample and FSA files (tutorial-02.zip)</li>
+  <li>Processing and assessing assay (FSA) files (tutorial-03.zip)</li>
+  <li>Performing simple, general analysis on your data (tutorial-04.zip)</li>
 </ul>
 
 % else:
