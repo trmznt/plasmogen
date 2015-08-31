@@ -14,14 +14,17 @@ ek_initlist = [
         ]),
 
     (   '@BLOOD-WITHDRAWAL', 'Blood widthdrawal method',
-        [   'venous',
+        [   ('NA', 'Not available'),
+            'venous',
             'capillary',
         ]),
     (   '@BLOOD-STORAGE', 'Blood storage/source method',
-        [   'EDTA',
+        [   ('NA', 'Not available'),
+            'EDTA',
             'blood tube',
             'filter paper',
         ]),
-    (   '@PCR-METHOD', 'PCR identification method', []
-        ),
+    (   '@PCR-METHOD', 'PCR identification method',
+        [   ('NA', 'Not available'),
+        ]),
     ]
