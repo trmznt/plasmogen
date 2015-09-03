@@ -19,7 +19,8 @@
 
   <!-- styles -->
   <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap.min.css')}" rel="stylesheet" />
-<link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap-theme.min.css')}" rel="stylesheet" />
+  <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap-theme.min.css')}" rel="stylesheet" />
+  <link href="${request.static_url('rhombus:static/fonts/source-sans-pro.css')}" rel="stylesheet" />
   <link href="${request.static_url('rhombus:static/select2/css/select2.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('genaf:static/custom.css')}" rel="stylesheet" />
   ${self.stylelink()}
