@@ -61,7 +61,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyze <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Basic tools</li>
-                <li><a href="/">Sample summary</a></li>
+                <li><a href="/tools/allele">Allele summary</a></li>
               </ul>
             </li>
             <li class="dropdown">
