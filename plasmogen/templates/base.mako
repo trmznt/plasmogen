@@ -98,7 +98,8 @@
       <div class='row'>
       <div class='col-md-12'>
         <!-- font: Nobile -->
-        <p>(c) 2015 Menzies School of Health Research &amp; Eijkman Institute for Molecular Biology</p>
+        <p>(C) 2013 - 2015 Menzies School of Health Research, Australia <br />
+           (C) 2013 - 2015 Eijkman Institute for Molecular Biology, Indonesia</p>
       </div>
       </div>
     </div>
