@@ -48,4 +48,9 @@ def main(global_config, **settings):
     cerr('PlasmoGEN main() in running...')
     config = init_app(global_config, settings, prefix='/mgr')
     config.include(includeme)
+
+    cover_template = settings.get('override.cover', None)
+    if cover_template:
+        config.override_asset( 'plasmogen:templates/cover.mako', cover_template)
+
     return config.make_wsgi_app()

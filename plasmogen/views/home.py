@@ -11,8 +11,11 @@ from rhombus.views.home import login as rhombus_login, logout as rhombus_logout
 
 
 def index(request):
-    return render_to_response( "plasmogen:templates/home.mako",
+    if request.user:
+        return render_to_response( "plasmogen:templates/home.mako",
                                 {}, request=request )
+    return render_to_response( "plasmogen:templates/cover.mako",
+    				{}, request=request )
 
 
 def login(request):
