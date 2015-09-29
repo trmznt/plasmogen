@@ -7,6 +7,10 @@ import plasmogen.scripts.run
 #set_dbhandler_class( DBHandler )
 
 from genaf import includeme as genaf_includeme, init_app
+from genaf.views.tools import set_form_factory
+
+from plasmogen.views.tools import plasmogen_form_factory
+
 
 
 def includeme( config ):
@@ -52,5 +56,7 @@ def main(global_config, **settings):
     cover_template = settings.get('override.cover', None)
     if cover_template:
         config.override_asset( 'plasmogen:templates/cover.mako', cover_template)
+
+    set_form_factory(plasmogen_form_factory)
 
     return config.make_wsgi_app()
