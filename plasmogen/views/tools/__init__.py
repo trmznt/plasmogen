@@ -28,7 +28,7 @@ def plasmogen_form_factory( request ):
         )
     )
 
-    markers_field = form.get('markers')
+    markers_field = form.get('marker_ids')
     markers_field.set(extra_control = markers_field.extra_control + 
     					' | <a id="APMEN-Pv9">APMEN-Pv9</a>')
     dbh = get_dbhandler()
@@ -36,7 +36,7 @@ def plasmogen_form_factory( request ):
     			['pv/MS1', 'pv/MS5', 'pv/MS8', 'pv/MS10', 'pv/MS12', 'pv/MS16', 'pv/MS20',
     			'pv/msp1F3', 'pv/pv3.27']]
     code += ( "\n$('#APMEN-Pv9').on('click', function() {"
-    				"$('#markers').val([%s]).trigger('change'); })"
+    				"$('#marker_ids').val([%s]).trigger('change'); })"
 					% ','.join( '"%d"' % m.id for m in markers ) )
 
     return (form, code)
