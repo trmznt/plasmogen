@@ -27,4 +27,8 @@ ek_initlist = [
     (   '@PCR-METHOD', 'PCR identification method',
         [   ('NA', 'Not available'),
         ]),
+    (   '@EXTFIELD', None,
+        [   'nationality',
+            'severity',
+        ]),
     ]
