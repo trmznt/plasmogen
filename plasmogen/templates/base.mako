@@ -62,6 +62,9 @@
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Basic tools</li>
                 <li><a href="/tools/allele">Allele summary</a></li>
+                <li><a href="/tools/genotype">Genotype summary</a></li>
+                <li><a href="/tools/he">Heterozygosity</a></li>
+                <li><a href="/tools/moi">Multiplicity of Infection</a></li>
               </ul>
             </li>
             <li class="dropdown">
