@@ -8,7 +8,7 @@ from plasmogen.lib import dictfmt
 
 from sqlalchemy import func
 
-# monkey patch / duck punching 
+# monkey patch / duck punching
 
 def Batch_add_sample(self, code):
         sample = PlasmogenSample()
@@ -19,7 +19,7 @@ def Batch_add_sample(self, code):
 def Batch_search_sample(self, sample_code):
         """ return a single Sample from the current batch with sample_code """
         try:
-            return self.samples.filter( 
+            return self.samples.filter(
                 func.lower(PlasmogenSample.code) == func.lower(sample_code),
                 PlasmogenSample.batch_id == self.id ).one()
         except NoResultFound:
@@ -28,7 +28,7 @@ def Batch_search_sample(self, sample_code):
 
 ##Batch.add_sample = Batch_add_sample ## <- this still necessary!!!
 ##Batch.search_sample = Batch_search_sample
-        
+
 
 @registered
 class Subject(BaseMixIn, Base):
@@ -39,21 +39,21 @@ class Subject(BaseMixIn, Base):
     code = Column(types.String(24), unique=True, nullable=False)
     yearofbirth = Column(types.Float, nullable=False)
     gender = Column(types.String(1), nullable=False)
-    notes = deferred( Column(types.Text()) )
+    notes = deferred( Column(types.Text(), nullable=False, server_default='') )
 
 
     ## optional fields, unique personal identity
-    name = Column(types.String(48))
+    name = Column(types.String(48), nullable=False, server_default='')
     birthday = Column(types.Date)
-    birthplace = Column(types.String(32))
-    idnumber = Column(types.String(32))
+    birthplace = Column(types.String(32), nullable=False, server_default='')
+    idnumber = Column(types.String(32), nullable=False, server_default='')
 
     ## custom fields
 
-    int1 = Column(types.Integer, nullable=False, default=0)        # custom usage
-    int2 = Column(types.Integer, nullable=False, default=0)        # custom usage
-    string1 = Column(types.String(16), nullable=False, default='')  # custom usage
-    string2 = Column(types.String(16), nullable=False, default='')  # custom usage
+    int1 = Column(types.Integer, nullable=False, server_default='0')        # custom usage
+    int2 = Column(types.Integer, nullable=False, server_default='0')        # custom usage
+    string1 = Column(types.String(16), nullable=False, server_default='')  # custom usage
+    string2 = Column(types.String(16), nullable=False, server_default='')  # custom usage
 
     __table_args__ = ( UniqueConstraint( 'code', 'gender', 'yearofbirth' ), {} )
 
@@ -84,9 +84,9 @@ class PlasmogenSample(Sample):
         This class contains information about Plasmodium samples
     """
 
-    passive_case_detection = Column(types.Boolean)
+    passive_case_detection = Column(types.Boolean, nullable=True)
 
-    symptomatic_status = Column(types.Boolean)
+    symptomatic_status = Column(types.Boolean, nullable=True)
 
     storage_id = Column(types.Integer, ForeignKey('eks.id'), nullable=False)
     storage = EK.proxy('storage_id', '@BLOOD-STORAGE')
@@ -108,7 +108,7 @@ class PlasmogenSample(Sample):
     microscopy = EK.proxy('microscopy_id', '@SPECIES')
     """ species identification based on microscopy """
 
-    parasitemia = Column(types.Float, nullable=False, default=-1)
+    parasitemia = Column(types.Float, nullable=False, server_default='-1')
 
     recurrent = Column(types.Boolean, nullable=False, default=False)
     """ if this a recurrent case """
@@ -118,7 +118,7 @@ class PlasmogenSample(Sample):
             backref=backref("samples", lazy='dynamic', passive_deletes=True))
     """ link to subject/individual """
 
-    day = Column(types.Integer, nullable=False, default = 0)
+    day = Column(types.Integer, nullable=False, server_default = '0')
     """ sampling day for a particular subject/individual """
 
     __mapper_args__ = { 'polymorphic_identity': 1 }
@@ -174,13 +174,13 @@ class PlasmogenSample(Sample):
 
             #self.subject_id = 0
 
-            # now if subject_code & 
+            # now if subject_code &
 
         else:
 
             raise NotImplementedError('PROG/ERR - not implemented yet')
 
-        super().update( obj )        
+        super().update( obj )
         return
 
         if obj.passive_case_detection is not None:
@@ -225,7 +225,7 @@ class PlasmogenSample(Sample):
                         location_id=location_id, collection_date=collection_date,
                         batch_id = batch_id)
                 #raise RuntimeError(collection_date)
-                print('Creating sample with code: %s with batch_id: %d' % 
+                print('Creating sample with code: %s with batch_id: %d' %
                         (sample.code, sample.batch_id))
                 dbsession.add( sample )
                 return sample
@@ -233,7 +233,7 @@ class PlasmogenSample(Sample):
         if len(r) == 1:
             return r[0]
         return r
-   
+
 
     @staticmethod
     def csv2dict( *args, **kwargs ):
