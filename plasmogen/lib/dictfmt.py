@@ -6,7 +6,8 @@ csv_headers = dictfmt.csv_headers.union({ 'PASSIVE_DETECTION', 'AGE', 'GENDER',
                 'BLOOD_WITHDRAWAL', 'BLOOD_STORAGE',
                 'MICROSCOPY_IDENTITY', 'PCR_IDENTITY', 'PCR_METHOD',
                 'PARASITE_DENSITY', 'SYMPTOMATIC_STATUS',
-                'DAY', 'RECURRENT', 'SUBJECT_CODE', 'RELATED_SAMPLE'})
+                'DAY', 'RECURRENT', 'SUBJECT_CODE', 'RELATED_SAMPLE',
+                'NATIONALITY', 'NATIONALITY_STATUS', 'IMPORTED_CASE'})
 
 
 
@@ -24,20 +25,22 @@ def update_sample( sample, r ):
 
     sample.update(
         dict(
-            case_detection = r.get('PASSIVE_DETECTION', 'X'),
+            case_detection = r.get('PASSIVE_DETECTION', None),
             gender = r.get('GENDER', 'X'),
             method = r.get('BLOOD_WITHDRAWAL', 'NA').strip(),
             storage = r.get('BLOOD_STORAGE', 'NA').strip(),
             microscopy = r.get('MICROSCOPY_IDENTITY', 'X').strip() or 'X',
             pcr = r.get('PCR_IDENTITY', 'X').strip() or 'X',
             pcr_method = r.get('PCR_METHOD', 'NA').strip(),
-            parasite_density = int(r.get('PARASITE_DENSITY','') or 0),
-            symptomatic_status = r.get('SYMPTOMATIC_STATUS', 'X'),
+            parasite_density = int(r.get('PARASITE_DENSITY','') or -1),
+            symptomatic_status = r.get('SYMPTOMATIC_STATUS', None),
             day = int(r.get('DAY','') or 0),
             recurrent = r.get('RECURRENT', 'N').strip(),
             subject_code = r.get('SUBJECT_CODE', None),
             related_sample = r.get('RELATED_SAMPLE', None),
-
+            nationality = r.get('NATIONALITY', ''),     # undefined region
+            nationality_status = r.get('NATIONALITY_STATUS', None),
+            imported_case = r.get('IMPORTED_CASE', None),
         )
     )
 

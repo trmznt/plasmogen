@@ -28,7 +28,6 @@ ek_initlist = [
         [   ('NA', 'Not available'),
         ]),
     (   '@EXTFIELD', None,
-        [   'nationality',
-            'severity',
+        [   'severity',
         ]),
     ]

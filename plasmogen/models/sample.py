@@ -1,7 +1,7 @@
 
 from rhombus.models.core import *
 from rhombus.models.ek import EK
-from rhombus.lib.utils import random_string
+from rhombus.lib.utils import random_string, cerr
 from genaf.models.sample import Sample, Batch
 
 from plasmogen.lib import dictfmt
@@ -48,6 +48,9 @@ class Subject(BaseMixIn, Base):
     birthplace = Column(types.String(32), nullable=False, server_default='')
     idnumber = Column(types.String(32), nullable=False, server_default='')
 
+    nationality_id = Column(types.Integer, ForeignKey('eks.id'), nullable=False)
+    nationality = EK.proxy('nationality_id', '@REGION')
+
     ## custom fields
 
     int1 = Column(types.Integer, nullable=False, server_default='0')        # custom usage
@@ -76,6 +79,68 @@ class Subject(BaseMixIn, Base):
     def autocode():
         return '#%08x' % random.randrange(256**4)
 
+    def update(self, d):
+
+        if type(d) == dict:
+            if d['nationality'] is not None:
+                self.nationality = d['nationality']
+                cerr('set nationality to %s' % d['nationality'])
+
+        else:
+            raise NotImplementedError('can only update from dict')
+
+
+class SubjectNote(Base):
+
+    __tablename__ = 'subjectnotes'
+    id = Column(types.Integer, primary_key=True)
+    subject_id = Column(types.Integer, ForeignKey('subjects.id', ondelete='CASCADE'),
+                nullable=False)
+    note_id = Column(types.Integer, ForeignKey('notes.id', ondelete='CASCADE'),
+                nullable=False)
+
+class SubjectIntData(Base):
+
+    __tablename__ = 'subjectints'
+    id = Column(types.Integer, primary_key=True)
+    subject_id = Column(types.Integer, ForeignKey('subjects.id', ondelete='CASCADE'),
+                nullable=False)
+    key_id = Column(types.Integer, ForeignKey('eks.id', ondelete='CASCADE'),
+                nullable=False)
+    key = EK.proxy('key_id', '@EXTFIELD')
+    value = Column(types.Integer, nullable=False)
+
+    __table_args__ = ( UniqueConstraint('subject_id', 'key_id'), {} )
+
+
+class SubjectStringData(Base):
+
+    __tablename__ = 'subjectstrings'
+    id = Column(types.Integer, primary_key=True)
+    subject_id = Column(types.Integer, ForeignKey('subjects.id', ondelete='CASCADE'),
+                nullable=False)
+    key_id = Column(types.Integer, ForeignKey('eks.id', ondelete='CASCADE'),
+                nullable=False)
+    key = EK.proxy('key_id', '@EXTFIELD')
+    value = Column(types.String(64), nullable=False)
+
+    __table_args__ = ( UniqueConstraint('subject_id', 'key_id'), {} )
+
+
+class SubjectEnumData(Base):
+
+    __tablename__ = 'subjectenums'
+    id = Column(types.Integer, primary_key=True)
+    subject_id = Column(types.Integer, ForeignKey('subjects.id', ondelete='CASCADE'),
+                nullable=False)
+    key_id = Column(types.Integer, ForeignKey('eks.id', ondelete='CASCADE'),
+                nullable=False)
+    key = EK.proxy('key_id', '@EXTFIELD')
+    value_id = Column(types.Integer, ForeignKey('eks.id', ondelete='CASCADE'),
+                nullable=False)
+
+    __table_args__ = ( UniqueConstraint('subject_id', 'key_id'), {} )
+
 
 @registered
 class PlasmogenSample(Sample):
@@ -87,6 +152,10 @@ class PlasmogenSample(Sample):
     passive_case_detection = Column(types.Boolean, nullable=True)
 
     symptomatic_status = Column(types.Boolean, nullable=True)
+
+    imported_case = Column(types.Boolean, nullable=True)
+
+    nationality_status = Column(types.Boolean, nullable=True)
 
     storage_id = Column(types.Integer, ForeignKey('eks.id'), nullable=False)
     storage = EK.proxy('storage_id', '@BLOOD-STORAGE')
@@ -138,10 +207,19 @@ class PlasmogenSample(Sample):
             if self.day == 0 and self.type == '':
                 self.type = 'P'
 
-            self.passive_case_detection = obj.get('case_detection').lower().startswith('y')
-            self.symptomatic_status = obj.get('symptomatic_status').lower().startswith('y')
+            if obj.get('case_detection') is not None:
+                self.passive_case_detection = obj.get('case_detection').lower().startswith('y')
 
-            self.parasitemia = int(obj.get('parasite_density', 0))
+            if obj.get('symptomatic_status') is not None:
+                self.symptomatic_status = obj.get('symptomatic_status').lower().startswith('y')
+
+            if obj.get('nationality_status') is not None:
+                self.nationality_status = obj.get('nationality_status').lower().startswith('y')
+
+            if obj.get('imported_case') is not None:
+                self.imported_case = obj.get('imported_case').lower().startswith('y')
+
+            self.parasitemia = int(obj.get('parasite_density', -1))
 
             # deals with subject
             subject_code = obj.get('subject_code', None)
@@ -169,7 +247,9 @@ class PlasmogenSample(Sample):
                 subject = Subject( code = code, gender = obj['gender'],
                                     yearofbirth = obj['yearofbirth'] )
                 session.add(subject)
+                subject.update( obj )
                 session.flush([subject])
+                cerr('subject %s nationality_id %d' % (subject.code, subject.nationality_id))
                 self.subject = subject
 
             #self.subject_id = 0
