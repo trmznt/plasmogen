@@ -18,7 +18,7 @@ def includeme( config ):
 
     # specific PlasmoGen configuration
 
-    add_route_view( config, 'plasmogen.views.subject', 'plasmogen.subject', 
+    add_route_view( config, 'plasmogen.views.subject', 'plasmogen.subject',
         '/subject',
         '/subject/@@action',
         '/subject/{id}@@edit',
@@ -26,7 +26,7 @@ def includeme( config ):
         ('/subject/{id}', 'view')
 
     )
-    
+
     # set essential pages
     config.add_route('home', '/')
     config.add_view('plasmogen.views.home.index', route_name = 'home')
@@ -41,6 +41,8 @@ def includeme( config ):
     config.include( genaf_includeme)
 
     config.override_asset('rhombus:templates/base.mako', 'plasmogen:templates/base.mako')
+    config.override_asset('rhombus:templates/plainbase.mako', 'plasmogen:templates/plainbase.mako')
+
 
     return config
 
