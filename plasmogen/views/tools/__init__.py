@@ -11,7 +11,7 @@ def plasmogen_form_factory( request ):
                     ('PS', 'Strict population samples for each differentiation '),
                     ('AU', 'Unique population samples'),
                     ('PU', 'Unique population samples for each differentiation'),
-                    ('NP', 'All non-population (e.g. recurrent) samples') 
+                    ('NP', 'All non-population (e.g. recurrent) samples')
         ]
     )
 
@@ -29,14 +29,16 @@ def plasmogen_form_factory( request ):
     )
 
     markers_field = form.get('marker_ids')
-    markers_field.set(extra_control = markers_field.extra_control + 
-    					' | <a id="APMEN-Pv9">APMEN-Pv9</a>')
+    markers_field.set(extra_control = markers_field.extra_control +
+    					' | <a id="APMEN-Pv9">APMEN-Pv9</a>' +
+                        ' | <a id="All-Pv">All-Pv</a>' +
+                        ' | <a id="All-Pf">All-Pf</a>')
     dbh = get_dbhandler()
-    markers = [ dbh.get_marker(code) for code in
+    apmen_markers = [ dbh.get_marker(code) for code in
     			['pv/MS1', 'pv/MS5', 'pv/MS8', 'pv/MS10', 'pv/MS12', 'pv/MS16', 'pv/MS20',
     			'pv/msp1F3', 'pv/pv3.27']]
     code += ( "\n$('#APMEN-Pv9').on('click', function() {"
     				"$('#marker_ids').val([%s]).trigger('change'); })"
-					% ','.join( '"%d"' % m.id for m in markers ) )
+					% ','.join( '"%d"' % m.id for m in apmen_markers ) )
 
     return (form, code)
