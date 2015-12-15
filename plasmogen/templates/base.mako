@@ -65,6 +65,8 @@
                 <li><a href="/tools/genotype">Genotype summary</a></li>
                 <li><a href="/tools/he">Heterozygosity</a></li>
                 <li><a href="/tools/moi">Multiplicity of Infection</a></li>
+                <li><a href="/tools/ld">LD (using LIAN)</a></li>
+                <li><a href="/tools/fst">FST (using Arlequin)</a></li>
                 <li><a href="/tools/pcoa">Principal Coordinate Analysis (PCoA)</a></li>
                 <li><a href="/tools/mca">Multiple Correspondence Analysis (MCA)</a></li>
                 <li><a href="/tools/nj">Neigbor-Joining (NJ) Tree</a></li>
