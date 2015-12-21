@@ -32,7 +32,7 @@ def update_sample( sample, r ):
             microscopy = r.get('MICROSCOPY_IDENTITY', 'X').strip() or 'X',
             pcr = r.get('PCR_IDENTITY', 'X').strip() or 'X',
             pcr_method = r.get('PCR_METHOD', 'NA').strip(),
-            parasite_density = int(r.get('PARASITE_DENSITY','') or -1),
+            parasite_density = round(float((r.get('PARASITE_DENSITY','') or -1))),
             symptomatic_status = r.get('SYMPTOMATIC_STATUS', None),
             day = int(r.get('DAY','') or 0),
             recurrent = r.get('RECURRENT', 'N').strip(),
