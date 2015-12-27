@@ -1,8 +1,8 @@
 
 from genaf.views.tools import genaf_form_factory, input_select, get_dbhandler
 
-def plasmogen_form_factory( request ):
-    form, code = genaf_form_factory(request)
+def plasmogen_form_factory( request, mode = 'mlgt' ):
+    form, code = genaf_form_factory(request, mode)
 
     form.get('sample_option').set(
     	options = [	('AA', 'All available samples'),
