@@ -82,7 +82,7 @@
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">User: <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="./">User: ${request.user.login}<span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
