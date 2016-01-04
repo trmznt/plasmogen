@@ -37,6 +37,14 @@ def includeme( config ):
     config.add_route('logout', '/logout')
     config.add_view('plasmogen.views.home.logout', route_name = 'logout')
 
+    add_route_view( config, 'plasmogen.views.docs', 'plasmogen.docs',
+        #'/docs{path:.*}@@view',
+        #'/docs{path:.*}@@edit',
+        #'/docs{path:.*}@@save',
+        #'/docs{path:.*}@@action',
+        ('/docs{path:.*}', 'index'),
+    )
+
     # include GenAF configuration
     config.include( genaf_includeme)
 
