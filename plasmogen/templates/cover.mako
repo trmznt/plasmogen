@@ -17,6 +17,36 @@
     <!-- Custom styles for this template -->
     <link href="${request.static_url('rhombus:static/cover.css')}" rel="stylesheet">
 
+    <style>
+    .intro-section {
+    height: 100%;
+    padding-top: 150px;
+    padding-bottom:150px;
+    text-align: center;
+}
+
+.features-section {
+    height: 100%;
+    padding-top: 150px;
+    padding-bottom:150px;
+    text-align: center;
+}
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+}
+
+.spacing-section {
+    height: 100%;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+}
+    </style>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -37,13 +67,17 @@
               <h3 class="masthead-brand">PlasmoGEN</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#intro">Home</a></li>
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#contact">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
+
+        </div>
+
+        <section id="intro" class="intro-section"><div class="cover-container">
 
           <div class="inner cover">
             <div class='row'>
@@ -72,7 +106,7 @@
                     <button class="btn btn-primary" type="submit">Login as Guest</button>
                   </fieldset>
                 </form>
-                <p>By clicking "Login as Guest", you agree to our 
+                <p>By clicking "Login as Guest", you agree to our
                 <a>terms of service</a> and
                 <a>privacy policy</a>.
                 </p>
@@ -91,11 +125,44 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>(C) 2015 <a>MSHR</a> and <a>EIMB</a>.</p>
+              <p>(C) 2015 <a href="http://www.menzies.edu.au">Menzies School of Health Research</a> and <a href="http://www.eijkman.go.id">Eijkman Institute for Molecular Biology</a>.</p>
             </div>
           </div>
 
-        </div>
+        </div></section>
+
+        <section id="features" class="features-section"><div class="cover-container">
+          <div class="inner-cover">
+            <h1 class="cover-heading">Features</h1>
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="lead">
+                  <li>Data repository and collaboration</li>
+                  <li>Data querying and filtering</li>
+                  <li>Integrated DNA microsatellite fragment analysis tool</li>
+                  <li>Online comprehensive and explorative analysis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div></section>
+
+        <section id="contact" class="contact-section"><div class="cover-container">
+          <div class="inner-cover">
+            <h1 class="cover-heading">Contact</h1>
+            <p class="lead">For general enquiries, please contact <br/> Dr. Sarah Auburn (sarah.auburn [AT] menzies.edu.au)</p>
+            <p class="lead">For technical-related enquiries, please contact <br/> Mr. Hidayat Trimarsanto (anto [AT] eijkman.go.id)</p>
+          </div>
+
+        </div></section>
+
+        <section id="spacing" class="spacing-section"><div class="cover-container">
+          <div class="inner-cover">
+            <h1>&nbsp;</h1>
+          </div>
+
+        </div></section>
 
       </div>
 
