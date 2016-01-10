@@ -21,6 +21,7 @@
   <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('rhombus:static/bootstrap/css/bootstrap-theme.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('rhombus:static/fonts/source-sans-pro.css')}" rel="stylesheet" />
+<link href="${request.static_url('rhombus:static/font-awesome-4.5.0/css/font-awesome.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('rhombus:static/select2/css/select2.min.css')}" rel="stylesheet" />
   <link href="${request.static_url('genaf:static/custom.css')}" rel="stylesheet" />
   ${self.stylelink()}
@@ -82,7 +83,7 @@
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">User: ${request.user.login}<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="./"><span class="fa fa-user"></span> ${request.user.login if request.user else 'Anonymous'}<span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

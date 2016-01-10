@@ -9,12 +9,47 @@
 
 <p>Welcome to ${request.get_resource('plasmogen.title', 'Plasmogen')} What's next?<p>
 
-<ul>
-  <li><a href="${request.route_url('genaf.batch-edit', id=0)}">Create a new batch</a>
-  <li><a href='${request.route_url("genaf.marker")}'>Check available markers</a></li>
-  <li>Browse available panels</li>
-  <li><a href='${request.route_url("genaf.batch")}'>Browse available batches</a></li>
-</ul>
+<div class="row">
+  <div class="col-sm-2">
+  <a href='${request.route_url("genaf.batch")}' class="btn btn-primary btn-block"
+  style="white-space: normal;">
+  <h3>Manage data</h3>
+  <p>Manage your batches, samples and molecular data</p>
+  <span class="fa fa-upload fa-5x"></span><br/>&nbsp;</a>
+  </div>
+  <div class="col-sm-2">
+  <a href='${request.route_url("genaf.marker")}' class="btn btn-primary btn-block"
+  style="white-space: normal;">
+  <h3>Browse markers</h3>
+  <p>See available microsatellite markers</p>
+  <span class="fa fa-map-marker fa-5x"></span><br />&nbsp;</a>
+  </div>
+  <div class="col-sm-2">
+  <a href='${request.route_url("genaf.panel")}' class="btn btn-primary btn-block"
+  style="white-space: normal;">
+  <h3>Browse panels</h3>
+  <p>See available microsatellite panel combinations</p>
+  <span class="fa fa-map-marker fa-5x"></span><br />&nbsp;</a>
+  </div>
+  <div class="col-sm-2">
+  <a href='${request.route_url("genaf.marker")}' class="btn btn-primary btn-block"
+  style="white-space: normal;">
+  <h3>Analyze data</h3>
+  <p>Perform data filtering and exploratory data analysis</p>
+  <span class="fa fa-bar-chart fa-5x"></span><br />&nbsp;</a>
+  </div>
+  <div class="col-sm-2">
+  <a href='${request.route_url("genaf.panel")}' class="btn btn-primary btn-block"
+  style="white-space: normal;">
+  <h3>Browse manuals</h3>
+  <p>Browse available user guides and tutorials</p>
+  <span class="fa fa-book fa-5x"></span><br />&nbsp;</a>
+  </div>
+
+
+</div>
+
+<br />&nbsp;<br />
 
 <p>Available tutorial:</p>
 <ul>
