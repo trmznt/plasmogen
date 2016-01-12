@@ -10,38 +10,38 @@
 <p>Welcome to ${request.get_resource('plasmogen.title', 'Plasmogen')} What's next?<p>
 
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.batch")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
-  <h3>Manage data</h3>
+  <h4><b>Manage data</b></h4>
   <p>Manage your batches, samples and molecular data</p>
   <span class="fa fa-upload fa-5x"></span><br/>&nbsp;</a>
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.marker")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
-  <h3>Browse markers</h3>
+  <h4><b>Browse markers</b></h4>
   <p>See available microsatellite markers</p>
   <span class="fa fa-map-marker fa-5x"></span><br />&nbsp;</a>
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.panel")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
-  <h3>Browse panels</h3>
+  <h4><b>Browse panels</b></h4>
   <p>See available microsatellite panel combinations</p>
   <span class="fa fa-map-marker fa-5x"></span><br />&nbsp;</a>
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.marker")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
-  <h3>Analyze data</h3>
+  <h4><b>Analyze data</b></h4>
   <p>Perform data filtering and exploratory data analysis</p>
   <span class="fa fa-bar-chart fa-5x"></span><br />&nbsp;</a>
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.panel")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
-  <h3>Browse manuals</h3>
+  <h4><b>Browse manuals</b></h4>
   <p>Browse available user guides and tutorials</p>
   <span class="fa fa-book fa-5x"></span><br />&nbsp;</a>
   </div>
