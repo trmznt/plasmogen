@@ -21,7 +21,9 @@ The accompanying example datasets consists of three files:
 
 You can inspect those files by opening the ``sampleinfo.txt`` and ``assayinfo.txt`` files in any software that can read text file, or use any spreadsheet software such as Microsoft Excel or LibreOffice Calc.
 
-A more detailed information about the file format (and the meaning of each field) can be found on Guide: File Format.
+A more detailed information about the file format (and the meaning of each field) can be found on `Guide - File Format`_.
+
+.. _Guide - File Format: /docs/guides/fileformats.rst
 
 If you want to prepare your own input files, any name can be used for each of the three files as long as you follow the format of each file.
 
