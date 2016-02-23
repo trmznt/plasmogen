@@ -93,6 +93,7 @@
                     <input type="password" class="form-control"
                         name='password' placeholder="Password">
                     <input type="hidden" name="came_from" value='/' /><br />
+                    <input type="hidden" name="userclass" value="" /><br />
                   </fieldset>
                   <fieldset>
                     <button class="btn btn-primary" type="submit">Login</button>
@@ -103,6 +104,7 @@
                   <fieldset>
                     <input type="hidden" name="login" value="guest">
                     <input type="hidden" name="came_from" value="/">
+                    <input type="hidden" name="userclass" value="" /><br />
                     <button class="btn btn-primary" type="submit">Login as Guest</button>
                   </fieldset>
                 </form>
@@ -151,8 +153,8 @@
         <section id="contact" class="contact-section"><div class="cover-container">
           <div class="inner-cover">
             <h1 class="cover-heading">Contact</h1>
-            <p class="lead">For general enquiries, please contact <br/> Dr. Sarah Auburn (sarah.auburn [AT] menzies.edu.au)</p>
-            <p class="lead">For technical-related enquiries, please contact <br/> Mr. Hidayat Trimarsanto (anto [AT] eijkman.go.id)</p>
+            <p class="lead">For general enquiries, please contact <br/>
+                Mr. Hidayat Trimarsanto (anto [AT] eijkman.go.id)</p>
           </div>
 
         </div></section>
