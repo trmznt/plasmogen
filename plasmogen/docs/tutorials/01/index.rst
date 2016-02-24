@@ -13,11 +13,13 @@ Since the accompanying data contains microsatellite data, it is assumed that use
 Preparing Input Files
 ---------------------
 
-The accompanying example datasets consists of three files:
+The accompanying example datasets, available as `data-01.zip`_, consists of three files:
 
-1. ``sampleinfo.txt`` - A tab-delimited file containing sample information
+1. ``sampleinfo.txt`` - A tab-delimited file containing sample information.
 #. ``fsa.zip`` - A zipped file containing all microsatellite data in FSA-formatted files
 #. ``assayinfo.txt`` - A tab-delimited file containing FSA meta data
+
+.. _data-01.zip: /docs/tutorials/01/data-01.zip
 
 You can inspect those files by opening the ``sampleinfo.txt`` and ``assayinfo.txt`` files in any software that can read text file, or use any spreadsheet software such as Microsoft Excel or LibreOffice Calc.
 
@@ -41,15 +43,17 @@ You will be provided with a form with details fo fill in as listed below. Bold f
 
 :Batch code: A unique (i.e. not already present in the database) string that identifies  your batch. Allowed characters for the string are alphanumerics, dash or underscore. **Do not use any spaces**.
 
+:Description: A brief description outlining the nature of the samples and the study for which the data was generated.
+
 :Primary group: A string indicating the name of the group or organization providing the data, i.e. the data owner. For this tutorial, set as DEMOGROUP.
 
 :Assay provider group: A string indicating the name of the organization where the assays were run. For the accompanying example datasets in this tutorial, set as MACROGEN.
 
+:Batch for bins setting: This is the batch code that will be used as the reference for bin settings. This option allows different batches to have different bins settings and parameters (for examples, bins for LIZ600 and bins for LIZ500). For now, just use **default**.
+
 :Species: A string indicating the Plasmodium Spp.: the system currently supports Pv and Pf assays. For the tutorial, set as **Pv**. *Important*: by setting species, the system will assume that any markers without explicit species code mentioned in any input files are markers for this intended species, unless the species is explicitly stated. For example, marker **MS16** will be assumed as **pv/MS16**.
 
-:Description: A brief description outlining the nature of the samples and the study for which the data was generated.
-
-:Remarks: An optional field for any information regarding this batches, further details on the samples or the study that may be helpful for those who are going to use the data in this batch.
+:Remarks: An optional field for any information regarding this batches, further detailed description on the samples or the study that may be helpful for those who are going to use the data in this batch.
 
 When you have filled up the forms, select **Save**. You will then directed to the batch view page, where you can manage this particular batch.
 
