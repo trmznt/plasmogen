@@ -39,7 +39,7 @@
   <span class="fa fa-bar-chart fa-5x"></span><br />&nbsp;</a>
   </div>
   <div class="col-sm-4 col-md-2">
-  <a href='${request.route_url("genaf.panel")}' class="btn btn-primary btn-block"
+  <a href='/docs/index.rst' class="btn btn-primary btn-block"
   style="white-space: normal;">
   <h4><b>Browse manuals</b></h4>
   <p>Browse available user guides and tutorials</p>
