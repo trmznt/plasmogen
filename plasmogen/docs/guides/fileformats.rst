@@ -27,6 +27,45 @@ The list of of fields can be found below. Although only *SAMPLE* field is mandat
 
 :COLLECTION_DATE: Date at which the patient donated the sample. Must be in format of **YYYY/MM/DD** for consistent data, otherwise the system will sometime confuse with the DD/MM/YYYY and MM/DD/YYYY format.
 
+:PASSIVE_DETECTION: Y (yes) or N (no).
+
+:AGE: Patient age in years. Must be an integer.
+
+:GENDER: F (female), M (male).
+
+:BLOOD_WITHDRAWAL: String indicating the blood withdrawal method e.g. capillary, venipuncture or other.
+
+:BLOOD_STORAGE: String indicating the blood storage method e.g. edta, dried blood spot or other.
+
+:MICROSCOPY_IDENTITY: Plasmodium Spp. determined by microscopy. For single species infections: Pf, Pk, Pm, Po, Pv or X (for unknown). For mixed species infections, list the species present in alphabetic order, separated by “/” e.g. Pf/Pv or Pf/Pk/Pv
+
+:PCR_IDENTITY: Plasmodium Spp. determined by microscopy. Details as for field MICROSCOPY_IDENTITY
+
+:PCR_METHOD: String indicating the PCR method used for species confirmation.
+
+:SYMPTOMATIC_STATUS: Indication of whether the patient was symptomatic or not; Y (yes) or N (no).
+
+:PARASITE_DENSITY: Estimated number of parasites per microliter of blood. Must be an integer.
+
+:TYPE: Type of the sample, either P (for population sample), R (for reference sample) or D (for dummy sample). The default is P (population). A sample will be included in the population analysis if the type is P, otherwise it will be discarded from the analysis set.
+
+:DAY: Sampling day. Must be an integer. The default value is 0 (as in day-0).
+
+:RECURRENT: Indication of whether the sample is a recurrence or not; Y (yes) or N (no).
+
+:RELATED_SAMPLE: If multiple samples have been obtained from the same patient, the sample identifer(s) field SAMPLE of the related sample(s) must be provided.
+
+:SUBJECT_CODE: Subject code (only fill this if the subject has been saved to the data base previously)
+
+:INT1: Custom integer
+
+:INT2: Custom integer
+
+:STRING1: Custom string
+
+:STRING2: Custom string
+
+:REMARK: Any remark or comments
 
 FSA Info File Format
 --------------------
