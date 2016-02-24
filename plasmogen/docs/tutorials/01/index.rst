@@ -77,13 +77,32 @@ Processing FSA Microsatellite Data
 
 Once the fsa files have been saved, *fragment analysis* (see the manuscript for further details on this process) must be undertaken. From the Batch view, select **Start FSA FA Manager**, and then select **Process** assays. Note that this is a lengthy task, with the time required depending on the number of fsa files/assays submitted, and how noisy they are. It is possible to do other things, even log out from vivaxgen and then come back again to the FSA FA manager view to inspect the progress, since the processing will be performed as a long-running background task.
 
-Once the fragment analysis process has finished, the assays can be inspected to view the allele calls and adjust values manually if necessary. Once the allele-calling has been finalized, several population genetic analyses can be performed using a suite of tools available in the Analysis tab (see Tutorial 2). Note that further filtering of alleles by absolute and relative allele peak intensity are provided in the analysis tools.
+Once the fragment analysis process has finished, the FSA files can be inspected to view the allele calls and adjust values manually if necessary. Once the allele-calling has been finalized, several population genetic analyses can be performed using a suite of tools available in the Analysis tab (see Tutorial 2). Note that further filtering of alleles by absolute and relative allele peak intensity are provided in the analysis tools.
 
 
 Assessing Fragment Analysis Results
 -------------------------------------
 
-On the FSA FA manager view, select **Browse FSA**.
+Before performing any further analysis, it is recommended to assess the results of
+the fragment analysis processes. On the FSA FA manager view, select **Browse FSA files** to open a new page showing the list of the FSA files together with their parameters results.
 
-.. |plasmogen| replace:: PlasmoGEN
+Below is the details of the parameters:
+
+:FSA Filename: The name of the FSA file
+
+:Sample Code: The sample code for the corresponding FSA file
+
+:Panel: The panel used for the corresponding FSA file
+
+:Score: The quality of ladder peaks of the FSA file, from 0.00 to 1.00 (highest score).
+
+:RSS: The Residual Sum of Squares of the ladder peaks against the regression line. Lower RSS value (< 50.00) indicates higher quality of the FSA file.
+
+:Proctime: The time taken for the system to process the FSA file in miliseconds. Higher processing time usually indicates that the FSA file is noisy.
+
+To inspect individual FSA file, click on the corresponding FSA filename (a good practise is by right-click the mouse button to open a new tab instead) which will open the FSA viewer. A single peak (or allele) can be editted (or re-annotated) by clicking on the **Edit** link in the peak/allele tables.
+
+
+
+.. |plasmogen| replace:: VivaxGEN
 
