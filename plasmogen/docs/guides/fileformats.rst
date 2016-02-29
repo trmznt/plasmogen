@@ -49,23 +49,23 @@ The list of of fields can be found below. Although only *SAMPLE* field is mandat
 
 :TYPE: Type of the sample, either P (for population sample), R (for reference sample) or D (for dummy sample). The default is P (population). A sample will be included in the population analysis if the type is P, otherwise it will be discarded from the analysis set.
 
-:DAY: Sampling day. Must be an integer. The default value is 0 (as in day-0).
+:DAY: Sampling day after the first blood collection date. Must be an integer. The default value is 0 (as in day-0).
 
 :RECURRENT: Indication of whether the sample is a recurrence or not; Y (yes) or N (no).
 
 :RELATED_SAMPLE: If multiple samples have been obtained from the same patient, the sample identifer(s) field SAMPLE of the related sample(s) must be provided.
 
-:SUBJECT_CODE: Subject code (only fill this if the subject has been saved to the data base previously)
+:SUBJECT_CODE: Subject code (only fill this if the subject has been saved to the data base previously).
 
-:INT1: Custom integer
+:INT1: Custom integer.
 
-:INT2: Custom integer
+:INT2: Custom integer.
 
-:STRING1: Custom string
+:STRING1: Custom string.
 
-:STRING2: Custom string
+:STRING2: Custom string.
 
-:REMARK: Any remark or comments
+:REMARK: Any remark or comments for this particular sample.
 
 FSA Info File Format
 --------------------
