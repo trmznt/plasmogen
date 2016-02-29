@@ -196,14 +196,21 @@ class PlasmogenSample(Sample):
     def update(self, obj):
 
         if type(obj) == dict:
-            self.storage = obj.get('storage')   # blood storage
-            self.method = obj.get('method')     # blood withdrawal method
-            self.pcr_method_id = EK._id(obj.get('pcr_method'), grp = '@PCR_METHOD',
+            if obj.get('storage') is not None:
+                self.storage = obj.get('storage')   # blood storage
+            if obj.get('method') is not None:
+                self.method = obj.get('method')     # blood withdrawal method
+            if obj.get('pcr_method') is not None:
+                self.pcr_method_id = EK._id(obj.get('pcr_method'), grp = '@PCR_METHOD',
                                     dbsession = object_session(self), auto=True)
-            self.pcr = obj.get('pcr')
-            self.microscopy = obj.get('microscopy')
-            self.type = obj.get('type')
-            self.day = obj.get('day')
+            if obj.get('pcr') is not None:
+                self.pcr = obj.get('pcr')
+            if obj.get('microscopy') is not None:
+                self.microscopy = obj.get('microscopy')
+            if obj.get('type') is not None:
+                self.type = obj.get('type')
+            if obj.get('day') is not None:
+                self.day = int(obj.get('day'))
             if self.day == 0 and self.type == '':
                 self.type = 'P'
 
@@ -219,7 +226,8 @@ class PlasmogenSample(Sample):
             if obj.get('imported_case') is not None:
                 self.imported_case = obj.get('imported_case').lower().startswith('y')
 
-            self.parasitemia = int(obj.get('parasite_density', -1))
+            if obj.get('parasite_density') is not None:
+                self.parasitemia = int(obj.get('parasite_density', -1))
 
             # deals with subject
             subject_code = obj.get('subject_code', None)
@@ -237,7 +245,7 @@ class PlasmogenSample(Sample):
                 if sample is None:
                     raise RuntimeError('ERROR for sample code %s: related sample code %s does not exist' % (self.code, related_sample))
                 self.subject_id = sample.subject_id
-            else:
+            elif not self.subject:
                 # create new subject
                 while True:
                     code = '#' + random_string(8)
