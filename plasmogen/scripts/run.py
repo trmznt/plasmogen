@@ -6,6 +6,7 @@ from genaf.scripts.run import main as genaf_main, set_config
 from rhombus.lib.utils import cout, cerr, cexit
 
 from plasmogen.models.handler import DBHandler
+from plasmogen.lib.query import set_query_class
 
 
 def greet():
@@ -25,6 +26,8 @@ set_config( environ='PLASMOGEN_CONFIG',
             usage = usage,
             dbhandler_class = DBHandler
 )
+
+set_query_class()
 
 def main():
     genaf_main()
