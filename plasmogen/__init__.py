@@ -48,6 +48,8 @@ def includeme( config ):
     # include GenAF configuration
     config.include( genaf_includeme)
 
+    config.add_view('plasmogen.views.tools.sample.index', route_name='tools-sample')
+
     config.override_asset('rhombus:templates/base.mako', 'plasmogen:templates/base.mako')
     config.override_asset('rhombus:templates/plainbase.mako', 'plasmogen:templates/plainbase.mako')
 
