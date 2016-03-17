@@ -5,11 +5,19 @@ from genaf.lib import query
 class FieldBuilder(query.FieldBuilder):
 
     def passive_detection(self, arg):
-        return ( self._eval_arg(arg, self._dbh.Sample.passive_detection),
+        return ( self._eval_arg(arg, self._dbh.Sample.passive_case_detection),
                 None )
 
     def symptomatic_status(self, arg):
         return ( self._eval_arg(arg, self._dbh.Sample.symptomatic_status),
+                None )
+
+    def microscopy_identity(self, arg):
+        return ( self._eval_ek_arg(arg, self._dbh.Sample.microscopy_id),
+                None )
+
+    def pcr_identity(self, arg):
+        return ( self._eval_ek_arg(arg, self._dbh.Sample.pcr_id),
                 None )
 
 
