@@ -16,6 +16,10 @@ class FieldBuilder(query.FieldBuilder):
         return ( self._eval_ek_arg(arg, self._dbh.Sample.microscopy_id),
                 None )
 
+    def blood_withdrawal(self, arg):
+        return (self._eval_ek_arg(arg, self._dbh.Sample.method_id),
+                None )
+
     def pcr_identity(self, arg):
         return ( self._eval_ek_arg(arg, self._dbh.Sample.pcr_id),
                 None )
