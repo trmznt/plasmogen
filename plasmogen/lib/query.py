@@ -24,6 +24,10 @@ class FieldBuilder(query.FieldBuilder):
         return ( self._eval_ek_arg(arg, self._dbh.Sample.pcr_id),
                 None )
 
+    def blood_storage(self, arg):
+        return ( self._eval_ek_arg(arg, self._dbh.Sample.storage_id),
+                None )
+
 
 class Selector(query.Selector):
 
