@@ -38,6 +38,7 @@ def format_output(results, options):
         for key in [ 'passive_detection', 'symptomatic_status',
                      'pcr_identity', 'microscopy_identity',
                      'blood_withdrawal', 'imported_case',
+                     'nationality_status', 'nationality',
                      'gender' ]:
 
             tab = table(class_='table table-condensed table-striped')
@@ -67,6 +68,8 @@ def summarize_sample(analytical_sets):
                 'blood_withdrawal': [],
                 'gender': [],
                 'imported_case': [],
+                'nationality_status': [],
+                'nationality': [],
             }
         d['label'] = a_set.label
 
@@ -79,7 +82,8 @@ def summarize_sample(analytical_sets):
             d['blood_withdrawal'].append( sample.method )
             d['gender'].append( sample.subject.gender )
             d['imported_case'].append( sample.imported_case )
-
+            d['nationality_status'].append( sample.nationality_status )
+            d['nationality'].append( sample.subject.nationality )
 
         d['passive_detection'] = summarize_field( d['passive_detection'] )
         d['symptomatic_status'] = summarize_field( d['symptomatic_status'] )
@@ -88,7 +92,8 @@ def summarize_sample(analytical_sets):
         d['blood_withdrawal'] = summarize_field( d['blood_withdrawal'] )
         d['gender'] = summarize_field( d['gender'] )
         d['imported_case'] = summarize_field( d['imported_case'] )
-
+        d['nationality_status'] = summarize_field( d['nationality_status'] )
+        d['nationality'] = summarize_field( d['nationality'] )
         results.append( d )
 
     return results
