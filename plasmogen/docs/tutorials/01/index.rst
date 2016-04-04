@@ -6,7 +6,8 @@ TUTORIAL 1 - UPLOADING YOUR DATA
 .. contents::
 .. sectnum::
 
-This tutorial shows step-by-step direction to prepare your datasets and to upload your prepared datasets to |plasmogen| platform, with the accompanying example datasets containing **microsatellite data**. A more detailed guide for data preparation and uploading can be found on the Guide: Data preparation and Uploading.
+This tutorial shows step-by-step direction to prepare your datasets and to upload your prepared datasets to |plasmogen| platform, with the accompanying example datasets containing **microsatellite data**.
+A more detailed guide for data preparation and uploading can be found on the Guide: Data preparation and Uploading.
 
 Since the accompanying data contains microsatellite data, it is assumed that users have a good understanding of the concepts on microsatellite markers.
 
@@ -29,31 +30,54 @@ A more detailed information about the file format (and the meaning of each field
 
 If you want to prepare your own input files, any name can be used for each of the three files as long as you follow the format of each file.
 
-Also note that the system is primarily set up to accept data from *Plasmodium vivax* (which is the species of the accompanying example datasets). If data is available for other *Plasmodium Spp*, this can be accomodated in the same input files as long as the relevant fields are filled appropriately (especially the PANEL field in the FSA meta data input file). However, *it is strongly recommended to use different batches for different species* as best practice in order to avoid any problems in the future.
+Also note that the system is primarily set up to accept data from *Plasmodium vivax* (which is the species of the accompanying example datasets).
+If data is available for other *Plasmodium Spp*, this can be accomodated in the same input files as long as the relevant fields are filled appropriately (especially the PANEL field in the FSA meta data input file).
+However, *it is strongly recommended to use different batches for different species* as best practice in order to avoid any problems in the future.
 
 
 Creating a New Batch
 --------------------
 
-Before you can upload the example datasets, you need to create a new batch (unless you want to add to an existing batch). A batch is essentially a collection of samples and molecular data from the same study, or from the same preparation methods.
+Before you can upload the example datasets, you need to create a new batch (unless you want to add to an existing batch).
+A batch is essentially a collection of samples and molecular data from the same study, or from the same preparation methods.
 
-Log in to |plasmogen| using your username and password, then select **Manage data** button or select **Browse >> Batch** from the navigational menu. A list of existing batch names will be displayed (these names cannot be used for new batches). To create a new batch, select **Add New Batch** (for adding or updating to an existing batch, you will need to select the intended batch name instead).
+Log in to |plasmogen| using your username and password, then select **Manage data** button or select **Browse >> Batch** from the navigational menu.
+A list of existing batch names will be displayed (these names cannot be used for new batches).
+To create a new batch, select **Add New Batch** (for adding or updating to an existing batch, you will need to select the intended batch name instead).
 
-You will be provided with a form with details fo fill in as listed below. Bold fields are compulsory.
+You will be provided with a form with details fo fill in as listed below.
+Bold fields are compulsory.
 
-:Batch code: A unique (i.e. not already present in the database) string that identifies  your batch. Allowed characters for the string are alphanumerics, dash or underscore. **Do not use any spaces**.
+:Batch code:
+  A unique (i.e. not already present in the database) string that identifies  your batch.
+  Allowed characters for the string are alphanumerics, dash or underscore.
+  The maximum length for batch code is 16 characters.
+  **Do not use any spaces**.
+  Best practise is to use a combination of country identification, species and year, such as IDPV2015 for Indonesian *P vivax* in year 2015.
 
-:Description: A brief description outlining the nature of the samples and the study for which the data was generated.
+:Description:
+  A brief description outlining the nature of the samples and the study for which the data was generated.
 
-:Primary group: A string indicating the name of the group or organization providing the data, i.e. the data owner. For this tutorial, set as DEMOGROUP.
+:Primary group:
+  A string indicating the name of the group or organization providing the data, i.e. the data owner. For this tutorial, set as DEMOGROUP.
 
-:Assay provider group: A string indicating the name of the organization where the assays were run. For the accompanying example datasets in this tutorial, set as MACROGEN.
+:Assay provider group:
+  A string indicating the name of the organization where the assays were run. For the accompanying example datasets in this tutorial, set as MACROGEN.
 
-:Batch for bins setting: This is the batch code that will be used as the reference for bin settings. This option allows different batches to have different bins settings and parameters (for examples, bins for LIZ600 and bins for LIZ500). For now, just use **default**.
+:Batch for bins setting:
+  This is the batch code that will be used as the reference for bin settings.
+  This option allows different batches to have different bins settings and parameters (for examples, bins for LIZ600 and bins for LIZ500).
+  For now, just use **default**.
 
-:Species: A string indicating the Plasmodium Spp.: the system currently supports Pv and Pf assays. For the tutorial, set as **Pv**. *Important*: by setting species, the system will assume that any markers without explicit species code mentioned in any input files are markers for this intended species, unless the species is explicitly stated. For example, marker **MS16** will be assumed as **pv/MS16**.
+:Species:
+  A string indicating the Plasmodium Spp.
+  The system currently supports Pv and Pf assays.
+  For this tutorial, set as **Pv**.
+  *Important*: by setting species, the system will assume that any markers without explicit species code mentioned in any input files are markers for this intended species, unless the species is explicitly stated.
+  For example, marker **MS16** will be assumed as **pv/MS16**.
 
-:Remarks: An optional field for any information regarding this batches, further detailed description on the samples or the study that may be helpful for those who are going to use the data in this batch.
+:Remarks:
+  An optional field for any information regarding this batches, further detailed description on the samples or the study that may be helpful for those who are going to use the data in this batch.
 
 When you have filled up the forms, select **Save**. You will then directed to the batch view page, where you can manage this particular batch.
 
@@ -61,13 +85,18 @@ When you have filled up the forms, select **Save**. You will then directed to th
 Adding Sample Data
 ------------------
 
-On the Batch view, click **Browse** next to Sample info file, and choose the prepared sample info file (or use sampleinfo.tab). Then click on the Upload to temporarily save the info file to server.  Click on Verify to check if the sample info contains errors or problems. Please correct any remaining errors and reupload the sample file. Click on Proceed to save the sample data file into the database.
+On the Batch view, click **Browse** next to Sample info file, and choose the prepared sample info file (or use sampleinfo.tab).
+Then click on the **Upload** to temporarily save the info file to server.
+Click on **Verify** to check if the sample info contains errors or problems.
+Please correct any remaining errors and reupload the sample file.
+Click on **Proceed** to save the sample data file into the database.
 
 
 Adding FSA Zip File
 -------------------
 
-From the Batch view, select Start upload session, and then select the fsa zip file (fsa.zip in the tutorial) to upload the files to the server. Once the uploading is finished, click on Verify file to check that the files were uploaded correctly.
+From the Batch view, select Start upload session, and then select the fsa zip file (fsa.zip in the tutorial) to upload the files to the server.
+Once the uploading is finished, click on Verify file to check that the files were uploaded correctly.
 
 If there are no errors, select and upload the assayinfo file (assayinfo.tab in the tutorial) to the server, and then select Verify file to check that the file was uploaded correctly.
 
