@@ -12,7 +12,8 @@ def plasmogen_form_factory( request, mode = 'mlgt' ):
                     ('AU', 'Unique population samples'),
                     ('PU', 'Unique population samples for each differentiation'),
                     ('NP', 'All non-population (e.g. recurrent) samples')
-        ]
+        ],
+        value = 'AP',
     )
 
     form.get('differentiation_fields').add(
