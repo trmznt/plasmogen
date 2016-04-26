@@ -4,16 +4,14 @@ from genaf.views.tools import genaf_form_factory, input_select, get_dbhandler
 def plasmogen_form_factory( request, mode = 'mlgt' ):
     form, code = genaf_form_factory(request, mode)
 
-    form.get('sample_option').set(
-    	options = [	('AA', 'All available samples'),
-                 	('AP', 'All population (day-0) samples'),
-                    ('AS', 'Strict population samples'),
-                    ('PS', 'Strict population samples for each differentiation '),
-                    ('AU', 'Unique population samples'),
-                    ('PU', 'Unique population samples for each differentiation'),
-                    ('NP', 'All non-population (e.g. recurrent) samples')
+    form.get('sample_selection').set(
+    	options = [	('N', 'No selection applied (all samples)'),
+                    ('F', 'All available field samples'),
+                 	('P', 'All population (day-0) field samples'),
+                    ('Q', 'All recurrent field samples'),
+                    ('R', 'All reference samples'),
         ],
-        value = 'AP',
+        value = 'P',
     )
 
     form.get('differentiation_fields').add(
