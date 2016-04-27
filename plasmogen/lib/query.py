@@ -35,6 +35,16 @@ class Selector(query.Selector):
         cerr('>>>> Plasmogen Selector FiledBuilder >>>>')
         return FieldBuilder(dbh)
 
+    def filter_sample(self, spec, dbh, q):
+
+        # plasmogen spesific sample selection
+        if self.global_options and 'sample_selection' in self.global_options:
+            sample_selection = self.global_options['sample_selection']
+            if sample_selection == 'P':
+                q = q.filter(dbh.Sample.day == 0)
+
+        return super().filter_sample(spec, dbh, q)
+
 
 def set_query_class():
     query.set_query_class(Selector, query.Filter, query.Differentiator)
