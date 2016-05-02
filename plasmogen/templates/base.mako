@@ -9,7 +9,8 @@
   </script>
 
 % else:
-
+##
+<%! from rhombus.views.user import user_menu %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,9 +84,7 @@
 
 
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./"><span class="fa fa-user"></span> ${request.user.login if request.user else 'Anonymous'}<span class="sr-only">(current)</span></a></li>
-          </ul>
+          ${user_menu(request)}
         </div><!--/.nav-collapse -->
       </div>
     </nav>
