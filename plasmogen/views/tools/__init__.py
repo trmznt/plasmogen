@@ -39,5 +39,10 @@ def plasmogen_form_factory( request, mode = 'mlgt' ):
     code += ( "\n$('#APMEN-Pv9').on('click', function() {"
     				"$('#marker_ids').val([%s]).trigger('change'); })"
 					% ','.join( '"%d"' % m.id for m in apmen_markers ) )
+    for species in [ 'Pv', 'Pf']:
+        all_markers = [ m for m in dbh.get_markers() if m.species == species.lower() ]
+        code += ( "\n$('#All-%s').on('click', function() {"
+                    "$('#marker_ids').val([%s]).trigger('change'); })"
+                    % (species, ','.join( '"%d"' % m.id for m in all_markers )) )
 
     return (form, code)
