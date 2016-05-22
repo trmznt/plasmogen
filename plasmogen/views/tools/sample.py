@@ -16,7 +16,7 @@ def index(request):
             callback = func_callback, mode = 'allele' )
 
 
-def func_callback( query, request ):
+def func_callback( query, user ):
 
     analytical_sets = query.get_filtered_analytical_sets()
 
@@ -25,7 +25,12 @@ def func_callback( query, request ):
 
     html, code = format_output(results, options)
 
-    return ("Sample/Metadata Summary Report", html, code)
+    return {    'custom': results,
+                'options': options,
+                'title': "Sample/Metadata Summary Report",
+                'html': html,
+                'jscode': code,
+    }
 
 
 def format_output(results, options):
