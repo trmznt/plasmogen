@@ -82,7 +82,9 @@ class Subject(BaseMixIn, Base):
     def update(self, d):
 
         if type(d) == dict:
-            if d['nationality'] is not None:
+            if not self.nationality_id:
+                self.nationality = ''
+            if d.get('nationality', None) is not None:
                 self.nationality = d['nationality']
                 cerr('set nationality to %s' % d['nationality'])
 
