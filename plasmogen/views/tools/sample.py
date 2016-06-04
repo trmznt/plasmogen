@@ -40,7 +40,8 @@ def format_output(results, options):
 
         html.add( row( div(h4(r['label'], class_='col-md-4') )) )
 
-        for key in [ 'passive_detection', 'symptomatic_status',
+        for key in [ 'string1',
+                     'passive_detection', 'symptomatic_status',
                      'pcr_identity', 'microscopy_identity',
                      'blood_withdrawal', 'imported_case',
                      'nationality_status', 'nationality',
@@ -75,6 +76,7 @@ def summarize_sample(analytical_sets):
                 'imported_case': [],
                 'nationality_status': [],
                 'nationality': [],
+                'string1':[],
             }
         d['label'] = a_set.label
 
@@ -89,6 +91,7 @@ def summarize_sample(analytical_sets):
             d['imported_case'].append( sample.imported_case )
             d['nationality_status'].append( sample.nationality_status )
             d['nationality'].append( sample.subject.nationality )
+            d['string1'].append( sample.string1 )
 
         d['passive_detection'] = summarize_field( d['passive_detection'] )
         d['symptomatic_status'] = summarize_field( d['symptomatic_status'] )
@@ -99,6 +102,7 @@ def summarize_sample(analytical_sets):
         d['imported_case'] = summarize_field( d['imported_case'] )
         d['nationality_status'] = summarize_field( d['nationality_status'] )
         d['nationality'] = summarize_field( d['nationality'] )
+        d['string1'] = summarize_field( d['string1'])
         results.append( d )
 
     return results
