@@ -76,6 +76,13 @@
               </ul>
             </li>
             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilities <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/utils/export">Export Data</a></li>
+                <li><a href="/utils/plot">Plot / Chart</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/">Tutorials</a></li>
