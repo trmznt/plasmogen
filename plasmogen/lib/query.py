@@ -28,6 +28,10 @@ class FieldBuilder(query.FieldBuilder):
         return ( self._eval_ek_arg(arg, self._dbh.Sample.storage_id),
                 None )
 
+    def nationality(self, arg):
+        return ( self._eval_ek_arg(arg, self._dbh.Subject.nationality_id),
+                self._dbh.Subject )
+
 
 class Selector(query.Selector):
 
