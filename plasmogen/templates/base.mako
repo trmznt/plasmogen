@@ -162,6 +162,7 @@ ${self.scriptlinks()}
 
 ##
 <%def name='jscode()'>
+${ code or '' | n }
 </%def>
 
 ##
