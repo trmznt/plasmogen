@@ -54,9 +54,9 @@
 <p>Available tutorial:</p>
 <ul>
   <li>Tutorial 1 - <a href="/docs/tutorials/01/index.rst">Uploading your data and FSA files</a></li>
-  <li>Adding individual sample and FSA files (tutorial-02.zip)</li>
-  <li>Processing and assessing assay (FSA) files (tutorial-03.zip)</li>
-  <li>Performing simple, general analysis on your data (tutorial-04.zip)</li>
+  <li>Tutorial 2 - <a href="/docs/tutorials/02/index.rst">Inspecting FSA anda data cleaning up</a></li>
+  <li>Tutorial 3 - <a href="/docs/tutorials/03/index.rst">Data Analysis</a></li>
+  <li>Tutorial 4 - <a href="/docs/tutorials/04/index.rst">Data Analysis with Custom Query</a></li>
 </ul>
 
 % else:
