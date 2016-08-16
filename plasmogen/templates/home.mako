@@ -53,11 +53,11 @@
 
 <p>Available tutorial:</p>
 <ul>
-  <li>Tutorial 1 - <a href="/docs/tutorials/01/index.rst">Uploading your data and FSA files</a></li>
-  <li>Tutorial 2 - <a href="/docs/tutorials/02/index.rst">Inspecting FSA anda data cleaning up</a></li>
-  <li>Tutorial 3 - <a href="/docs/tutorials/03/index.rst">Data Analysis</a></li>
-  <li>Tutorial 4 - <a href="/docs/tutorials/04/index.rst">Data Analysis with Custom Query</a></li>
-  <li>Tutorial 5 - <a href="/docs/tutorials/05/index.rst">Data Analysis with YAML Query</a></li>
+  <li>Tutorial 1 - <a href="/docs/tutorials/01/index.rst">Uploading your data</a></li>
+  <li>Tutorial 2 - <a href="/docs/tutorials/02/index.rst">Inspecting FSA files and data cleaning</a></li>
+  <li>Tutorial 3 - <a href="/docs/tutorials/03/index.rst">Data analysis</a></li>
+  <li>Tutorial 4 - <a href="/docs/tutorials/04/index.rst">Data analysis with custom query</a></li>
+  <li>Tutorial 5 - <a href="/docs/tutorials/05/index.rst">Data analysis with YAML query</a></li>
 </ul>
 
 % else:
