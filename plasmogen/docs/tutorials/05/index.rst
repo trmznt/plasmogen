@@ -1,6 +1,6 @@
 
 ===========================================
-TUTORIAL 4 - DATA ANALYSIS WITH YAML FORMAT
+TUTORIAL 5 - DATA ANALYSIS WITH YAML FORMAT
 ===========================================
 
 .. contents::
@@ -8,7 +8,7 @@ TUTORIAL 4 - DATA ANALYSIS WITH YAML FORMAT
 
 In this tutorial, we will review options for performing data analysis in VivaxGEN using the YAML text format.
 Note, most users will not need to use the YAML text format – options are provided for more advanced users performing bulk analyses.
-As stated in the `official YAML website`_, YAML is a human friendly data serialization standard for all programming languages.
+As stated in the `official YAML website`_, YAML is *a human friendly data serialization standard for all programming languages*.
 YAML is a text format that computers can parse and that users can edit and read easily.
 The YAML format for querying VivaxGEN may be useful to save time where a user needs to perform multiple analyses using different tools with similar queries.
 In this case, the user can copy and paste the YAML query into the YAML query set, save the query for future use, or for sharing with other users to ensure consistent parameters (and consistent results).
@@ -51,15 +51,15 @@ In the above query, we do not use any differentiation and so we use `-1` for a
 Using YAML Query
 -----------------
 
-To use the YAML format as a query, for example to prepare a Sample summary, we need to click on the YAML Query navigation tab which will change the web form to a simple form as illustrated below.
+To use the YAML format as a query, for example to prepare a *Sample summary*, we need to click on the **YAML Query** navigation tab which will change the web form to a simple form as illustrated below.
 
 .. image:: yaml-form.png
 
-The YAML text then needs to be pasted or directly written into the YAML query field.
+The YAML text then needs to be pasted or directly written into the **YAML query** field.
 
-For the tutorial, select the Sample summary entry from the Analyze drop-down menu, and paste the above example query into the YAML query field.
-Select Execute to perform the analysis.
-The result output should be similar to the output from step 1  in Tutorial 3.
+For the tutorial, select the **Sample summary** entry from the **Analyze** drop-down menu, and paste the above example query into the **YAML query** field.
+Select **Execute** to perform the analysis.
+The result output should be similar to the output from section 1 in Tutorial 3.
 
 Using YAML Query for Differentiation
 ------------------------------------
