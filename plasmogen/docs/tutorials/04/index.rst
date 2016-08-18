@@ -58,7 +58,7 @@ Performing Principal Coordinate Analysis using a Custom Query
 
 In this step of the tutorial, we will generate a PCoA cluster plot on the BTPV batch with differentiation by nationality.
 Select the **Principle Coordinate Analysis (PCoA)** entry from the **Analyze** drop-down menu.
-As in step 1, click on the **Use query set link, and add the query statement from step 1.
+As in step 1, click on the **Use query set** link, and add the query statement from step 1.
 Select the **APMEN-Pv9** marker set, leave the other parameters as default, and then select Execute.
 
 The results output should provide a PCoA cluster plot with colour-coded differentiation of the samples by nationality as in the figure below.
