@@ -3,15 +3,23 @@
 FILE FORMATS
 ============
 
-This guide provides the detailed information about file formats for input files.
+This guide provides detailed information on file formats for input files.
 
 Sample Info File Format
 -----------------------
 
-The sample info input file contains any information regarding each sample. The format is a tab-delimited text file or comma-separated value text file. The system will deduce the format by the extension of the filename: use .txt, .tab or .tsv for the tab-delimited format, and use .csv for the comma-separated value format.
+The sample information input file contains sample metadata.
+The format is a tab-delimited text file or comma-separated value text file.
+The system will deduce the format by the extension of the filename: use .txt, .tab or .tsv for the tab-delimited format, and use .csv for the comma-separated value format.
 
+The list of fields is presented below.
 
-The list of of fields can be found below. Although only *SAMPLE* field is mandatory, it is highly recommended to at least have **SAMPLE**, **COUNTRY** and **COLLECTION_DATE** fields. Please note that some of the fields can only contain controlled/allowed keywords/vocabularies for data consistency. Controlled/allowed keywords/vocabularies are listed in the last section of this document.
+Only the **SAMPLE** field is mandatory, but it is highly recommended to add details on **COUNTRY** and **COLLECTION_DATE**.
+Please note that some of the fields can only contain *controlled vocabularies*.
+These are predefined terms set by the systems administrator.
+The controlled vocabularies are used to maintain consistency between datasets.
+Current available vocabularies/keywords are listed at the end of this document.
+If you require a new keyword, please contact the systems administrator at anto@eijkman.go.id.
 
 :SAMPLE: (mandatory) A unique string (within the batch) indicating a particular sample. Allowed characters are alphanumerics, dash, dot and underscore. **Do not use space**.
 
@@ -85,7 +93,7 @@ Below is the list of the fields for this file. All the fields, except OPTIONS, a
 Controlled Vocabularies / Keywords
 ----------------------------------
 
-Some of the field in the input file require controlled vocabularies/keywords. These are predefined terms which can only be inserted by the adminisrator. The controlled vocabularies help the consistency of the data in the database. If there is a neccessity to add new keywords, please contact |admin|.
+Below is the system-generated list of available vocabularies/keywords present in the database.
 
 Current keywords for BLOOD_WITHDRAWAL:
 
