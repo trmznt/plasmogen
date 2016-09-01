@@ -9,8 +9,8 @@ Manuals and User Guides
 * Managing Data
 * Data Preparation
 * `File Formats`_
-* Assessing Microsatellite Data
-* Performing Data Analysis
+* `Guide on Fragment Analysis`_
+* `Guide on Data Analysis`_
 
 Tutorials
 ---------
@@ -22,6 +22,8 @@ Tutorials
 * `Data Analysis with YAML`_
 
 .. |plasmogen| replace:: PlasmoGEN
+.. _Guide on Fragment Analysis: guides/fragmentanalysis.rst
+.. _Guide on Data Analysis: guides/dataanalysis.rst
 .. _Uploading Your Data: tutorials/01/index.rst
 .. _Inspecting FSA Files and Data Cleaning: tutorials/02/index.rst
 .. _Data Analysis: tutorials/03/index.rst
