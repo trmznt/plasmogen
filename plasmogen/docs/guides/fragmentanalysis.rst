@@ -52,6 +52,22 @@ Another smoothing with Savitsky-Golay with window size of 11 and polyorder of 7 
 
 .. image:: savgol.png
 
+The last step in the baseline normalization is the *white tophat transform*, which will perform futher background equalization which may have been missed by the previous steps.
+
+.. image:: tophat.png
+
+Traces resulted in from the last white tophat transform will then be saved to the database.
+
+The separation and baseline normalization steps occur during FSA upload step to VivaxGEN.
+
+
+Peak Scanning
+-------------
+
+Peak scanning in |plasmogen| uses maximum method and CWT-based
+
+
+
 
 
 
