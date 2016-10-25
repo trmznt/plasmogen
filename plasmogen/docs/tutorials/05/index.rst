@@ -1,10 +1,10 @@
 
-===========================================
-TUTORIAL 5 - DATA ANALYSIS WITH YAML FORMAT
-===========================================
+==============================
+DATA ANALYSIS WITH YAML FORMAT
+==============================
 
 .. contents::
-.. sectnum::
+
 
 In this tutorial, we will review options for performing data analysis in VivaxGEN using the YAML text format.
 Note, most users will not need to use the YAML text format – options are provided for more advanced users performing bulk analyses.

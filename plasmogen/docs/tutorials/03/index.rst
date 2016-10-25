@@ -1,10 +1,9 @@
 
-================================
-TUTORIAL 3 - DATA ANALYSIS
-================================
+=============
+DATA ANALYSIS
+=============
 
 .. contents::
-.. sectnum::
 
 This tutorial provides step-by-step instructions on how to perform data analyses using the form-based web interface.
 The tutorial uses examples from the publically available batch BTPV, comprising microsatellite data on *P. vivax* isolates from patients in Bhutan (`1`_).
@@ -42,7 +41,7 @@ The following information is provided:
 
 - After filtering samples and markers according to the parameters set in the prior step, there are 28 samples remaining (Filtered Samples) in batch BTPV and that have been included in the analysis.
   As defined in the default parameters, the dataset on the 28 Filtered samples only comprises samples with genotype calls for at least 50% of the total markers (i.e. 5 of the 9 markers), as the default value of **Sample quality threshold** is 0.5.
-  As the default **Allele absolute threshold** was set to 100, genotype calls were only provided for alleles with relative fluorescence unit (RFU) ≥ 100.
+  As the default **Allele absolute threshold** was set to 100, genotype calls were only provided for alleles with relative fluorescence unit (RFU) >= 100.
 
 - All 28 Filtered samples were collected by passive detection, without any symptomatic status, and had been identified as *P. vivax* by both PCR and microscopy.
   All blood samples were collected by venous withdrawal.

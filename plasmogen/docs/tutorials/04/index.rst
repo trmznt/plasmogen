@@ -1,10 +1,9 @@
 
-============================================
-TUTORIAL 4 - DATA ANALYSIS WITH CUSTOM QUERY
-============================================
+===============================
+DATA ANALYSIS WITH CUSTOM QUERY
+===============================
 
 .. contents::
-.. sectnum::
 
 In this tutorial, we will review the steps for performing  data analysis using the custom query tools.
 The custom query tools may be required for analyses that cannot be performed using the existing drop-down options in the form-based query tools available on VivaxGEN.

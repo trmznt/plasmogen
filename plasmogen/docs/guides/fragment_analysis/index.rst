@@ -1,26 +1,31 @@
+.. VivaxGEN Guides documentation master file, created by
+   sphinx-quickstart on Thu Sep 29 18:08:16 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
 
 ==============================
 GUIDE ON FSA FRAGMENT ANALYSIS
 ==============================
 
-.. contents::
-.. sectnum::
+.. toctree::
+   :maxdepth: 2
 
 This document provides a summary of the fragment analysis process performed by |plasmogen|.
 
 INTRODUCTION
-============
+%%%%%%%%%%%%
 
 Fragment analysis is a process to analyze the eletropherograms obtained from a capillary sequencing machine in the form of FSA file to determine the length (in bp) of the DNA fragments that are being genotyped.
 
 FRAGMENT ANALYSIS PROCESS
-=========================
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Separation of Electropherograms
 -------------------------------
 
 The fragment analysis process starts by separating the electropherograms in the FSA files into separate channels for each dye/marker combination.
-An example of multi channel FSA files is illustrated below.
+An example of multi channel FSA files is illustrated below (taken from FSA file 2014-01-06_mix-06012014_PBM-10156-10A.fsa).
 
 .. image:: full_trace.png
 
@@ -52,22 +57,9 @@ Another smoothing with Savitsky-Golay with window size of 11 and polyorder of 7 
 
 .. image:: savgol.png
 
-The last step in the baseline normalization is the *white tophat transform*, which will perform futher background equalization which may have been missed by the previous steps.
+Lastly, a tophat morphological mathematical transform is applied to the trace to enhance other features that may have been missed by the previous procedures to produce the final smoothed, baseline-corrected trace.
 
-.. image:: tophat.png
-
-Traces resulted in from the last white tophat transform will then be saved to the database.
-
-The separation and baseline normalization steps occur during FSA upload step to VivaxGEN.
-
-
-Peak Scanning
--------------
-
-Peak scanning in |plasmogen| uses maximum method and CWT-based
-
-
-
+.. image:: smooth_signal.png
 
 
 
@@ -75,4 +67,13 @@ Peak scanning in |plasmogen| uses maximum method and CWT-based
 
 
 .. |plasmogen| replace:: VivaxGEN
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 

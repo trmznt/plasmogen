@@ -4,7 +4,7 @@ GUIDE ON DATA ANALYSIS
 ======================
 
 .. contents::
-.. sectnum::
+
 
 This document provides a summary of the analyses which can be performed in |plasmogen|.
 
@@ -58,6 +58,7 @@ Sample summary
 ++++++++++++++
 
 This tool provides metadata summaries on a given sample set.
+The summary includes the number of samples which have
 
 Allele summary
 ++++++++++++++
@@ -183,9 +184,6 @@ This tools uses MLG samples.
 .. |FST| replace:: :math:`F_{ST}`
 .. |FsST| replace:: :math:`F'_{ST}`
 
-
-REFERENCES
-----------
 
 .. [Anderson2000] Anderson TJ, et. al. 2000. Microsatellite markers reveals a spectrum of population structures in the malaria parasite Plasmodium falciparum. *Mol Biol Evol* - `PUBMED:11018154 <http://www.ncbi.nlm.nih.gov/pubmed/11018154>`_
 .. [Excoffier2010] Excoffier L, Lischer HEL. 2010. Arlequin suite ver 3.5: A new series of programs to perform population genetics analysis under Linux and Windows. *Mol Ecol Resour* - `PUBMED:21565059 <http://www.ncbi.nlm.nih.gov/pubmed/21565059>`_

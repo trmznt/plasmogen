@@ -1,10 +1,9 @@
 
-=========================================
-TUTORIAL 2 - MICROSATELLITE DATA CLEANING
-=========================================
+============================
+MICROSATELLITE DATA CLEANING
+============================
 
 .. contents::
-.. sectnum::
 
 This tutorial provides step-by-step instructions on how to perform data cleaning to exclude peaks such background noise, artefacts or stutter.
 The fragment analysis process in VivaxGEN provides the first layer of data cleaning from the raw FSA files.

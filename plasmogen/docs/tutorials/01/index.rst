@@ -1,10 +1,9 @@
 
-================================
-TUTORIAL 1 - UPLOADING YOUR DATA
-================================
+===================
+UPLOADING YOUR DATA
+===================
 
 .. contents::
-.. sectnum::
 
 
 
@@ -22,13 +21,13 @@ The example datasets, available as `data-01.zip`_, consist of three files:
 #. ``fsa.zip`` - A zipped file containing all microsatellite data in FSA-formatted files.
 #. ``assayinfo.txt`` - A tab-delimited file containing FSA metadata
 
-.. _data-01.zip: /docs/tutorials/01/data-01.zip
+.. _data-01.zip: http://vivaxgen.menzies.edu.au/docs/tutorials/01/data-01.zip
 
 The ``sampleinfo.txt`` and ``assayinfo.txt`` files can be opened for inspection using any software capable of reading text files or spreadsheet-based softwares such as Microsoft Excel or LibreOffice Calc.
 
 More detailed information on the file format  can be found here: `Guide - File Format`_.
 
-.. _Guide - File Format: /docs/guides/fileformats.rst
+.. _Guide - File Format: http://vivaxgen.menzies.edu.au/docs/guides/fileformats.rst
 
 When preparing your own input files, any name can be used for each of the three files, but the file formatting must be strictly adhered to.
 
