@@ -16,7 +16,7 @@ class DBHandler(genaf_DBHandler):
         super().initdb(create_table, init_data)
         if init_data:
             from plasmogen.models.setup import setup
-            setup( self.session )
+            setup( self.session() )
             cerr('[plasmogen] Database has been initialized.')
 
 
