@@ -1,4 +1,7 @@
 <%inherit file="rhombus:templates/base.mako" />
+<%!
+from rhombus.lib.roles import GUEST
+%>
 
 <h1>${request.get_resource('plasmogen.header', "PlasmoGEN - Plasmodium Genotype platform")}</h1>
 
@@ -13,9 +16,15 @@
   <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.batch")}' class="btn btn-primary btn-block"
   style="white-space: normal;">
+  % if not request.user.has_roles(GUEST):
   <h4><b>Manage data</b></h4>
   <p>Manage your batches, samples and molecular data</p>
   <span class="fa fa-upload fa-5x"></span><br/>&nbsp;</a>
+  % else:
+  <h4><b>Browse data</b></h4>
+  <p>Browse public batches, samples and molecular data</p>
+  <span class="fa fa-upload fa-5x"></span><br/>&nbsp;</a>
+  % endif
   </div>
   <div class="col-sm-4 col-md-2">
   <a href='${request.route_url("genaf.marker")}' class="btn btn-primary btn-block"
