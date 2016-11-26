@@ -60,6 +60,20 @@ from rhombus.lib.roles import GUEST
 
 <br />&nbsp;<br />
 
+% if 'plasmogen.demo.url' in request.registry.settings:
+
+<p>For full tutorial which include data uploading and data cleaning sessions, please go to the demo site by following this
+<a href="${request.registry.settings['plasmogen.demo.url']}">link</a>.</p>
+
+<p>Tutorial for this site:</p>
+<ul>
+  <li><a href="/docs/tutorials/03/index.rst">Data analysis</a></li>
+  <li><a href="/docs/tutorials/04/index.rst">Data analysis with custom query</a></li>
+  <li><a href="/docs/tutorials/05/index.rst">Data analysis with YAML query</a></li>
+</ul>
+
+% else:
+
 <p>Available tutorial:</p>
 <ul>
   <li>Tutorial 1 - <a href="/docs/tutorials/01/index.rst">Uploading your data</a></li>
@@ -68,6 +82,8 @@ from rhombus.lib.roles import GUEST
   <li>Tutorial 4 - <a href="/docs/tutorials/04/index.rst">Data analysis with custom query</a></li>
   <li>Tutorial 5 - <a href="/docs/tutorials/05/index.rst">Data analysis with YAML query</a></li>
 </ul>
+
+% endif
 
 % else:
 
