@@ -22,11 +22,11 @@ Tutorials
 * `Data Analysis with YAML`_
 
 .. |plasmogen| replace:: PlasmoGEN
-.. _Guide on Fragment Analysis: guides/fragmentanalysis.rst
-.. _Guide on Data Analysis: guides/dataanalysis.rst
+.. _Guide on Fragment Analysis: guides/fragment_analysis/index.rst
+.. _Guide on Data Analysis: guides/data_analysis/index.rst
 .. _Uploading Your Data: tutorials/01/index.rst
 .. _Inspecting FSA Files and Data Cleaning: tutorials/02/index.rst
 .. _Data Analysis: tutorials/03/index.rst
 .. _Data Analysis with Custom Query: tutorials/04/index.rst
 .. _Data Analysis with YAML: tutorials/05/index.rst
-.. _File Formats: guides/fileformats.rst
+.. _File Formats: guides/file_formats/index.rst
