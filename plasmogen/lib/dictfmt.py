@@ -26,7 +26,7 @@ def update_sample( sample, r ):
     sample.update(
         dict(
             case_detection = r.get('PASSIVE_DETECTION', None),
-            gender = r.get('GENDER', 'X'),
+            gender = r.get('GENDER', 'X').strip(),
             method = r.get('BLOOD_WITHDRAWAL', 'NA').strip(),
             storage = r.get('BLOOD_STORAGE', 'NA').strip(),
             microscopy = r.get('MICROSCOPY_IDENTITY', 'X').strip() or 'X',
@@ -38,7 +38,7 @@ def update_sample( sample, r ):
             recurrent = r.get('RECURRENT', 'N').strip(),
             subject_code = r.get('SUBJECT_CODE', None),
             related_sample = r.get('RELATED_SAMPLE', None),
-            nationality = r.get('NATIONALITY', ''),     # undefined region
+            nationality = r.get('NATIONALITY', '').strip(),     # undefined region
             nationality_status = r.get('NATIONALITY_STATUS', None),
             imported_case = r.get('IMPORTED_CASE', None),
         )
