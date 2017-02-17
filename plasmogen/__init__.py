@@ -45,6 +45,11 @@ def includeme( config ):
         ('/docs{path:.*}', 'index'),
     )
 
+    # set other related functions
+
+    import genaf.views.sample, plasmogen.views.sample
+    genaf.views.sample.set_format_sampleinfo( plasmogen.views.sample.format_sampleinfo )
+
     # include GenAF configuration
     config.include( genaf_includeme)
 
