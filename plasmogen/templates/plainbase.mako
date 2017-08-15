@@ -65,4 +65,5 @@ ${self.scriptlinks()}
 </%def>
 ##
 ##
-
+<%def name="jscode()">
+</%def>
